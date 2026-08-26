@@ -4,7 +4,7 @@ import math
 import re
 import argparse
 
-# Standard ANSI Bold
+# Standard ANSI Bold (No colors, no experimental sizing)
 BOLD = '\033[1m'
 RESET = '\033[0m'
 
@@ -15,12 +15,7 @@ def bionic_word(word):
     first_half = word[:mid]
     second_half = word[mid:]
     
-    # Kitty Text Sizing Protocol (OSC 66)
-    # n=6:d=5 gives a 1.2x scale multiplier (slightly larger text)
-    # We wrap the first half in the OSC 66 protocol and embed the ANSI Bold inside it
-    kitty_scaled_first = f"\033]66;n=6:d=5;{BOLD}{first_half}{RESET}\a"
-    
-    return f"{kitty_scaled_first}{second_half}"
+    return f"{BOLD}{first_half}{RESET}{second_half}"
 
 def process_line(line):
     tokens = re.split(r'(\W+)', line)
@@ -28,7 +23,7 @@ def process_line(line):
 
 def main():
     parser = argparse.ArgumentParser(description="Bionic Terminal Text Filter")
-    parser.add_argument('--version', action='version', version='Bionic Terminal v2.0 (Kitty Sizing Protocol Edition)')
+    parser.add_argument('--version', action='version', version='Bionic Terminal v1.3 (Pure Bold Edition)')
     args = parser.parse_args()
 
     try:
