@@ -23,7 +23,7 @@ def process_line(line):
 
 def main():
     parser = argparse.ArgumentParser(description="Bionic Terminal Text Filter")
-    parser.add_argument('--version', action='version', version='Bionic Terminal v1.3 (Pure Bold Edition)')
+    parser.add_argument('--version', action='version', version='Bionic Terminal v3.0 (System Binary Edition)')
     args = parser.parse_args()
 
     try:
