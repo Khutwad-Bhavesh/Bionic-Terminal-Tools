@@ -15,4 +15,11 @@ Transforms your Linux terminal into a Bionic Reading environment for ultimate AD
 - `bread`: Pipe output from any terminal command to read it in bionic format (e.g. `ls -la | bread`).
 - `bcat`: View text files in bionic format instantly (e.g. `bcat notes.txt`).
 
+## System-Wide Installation
+Because this is deployed as a global Linux binary, install it with root privileges:
+```bash
+sudo ./install_global.sh
+```
+To uninstall cleanly: `sudo ./uninstall_global.sh`
+
 *(Developed with the elite mindset of Cristiano Ronaldo 🐐)*
